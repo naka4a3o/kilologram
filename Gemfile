@@ -60,5 +60,7 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'simple_calendar', '~> 2.0'
 gem 'pry-rails'
 gem 'devise'
+

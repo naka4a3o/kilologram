@@ -342,14 +342,6 @@ table {
   border-spacing: 0;
 }
 
-<<<<<<< HEAD
-=======
-/* ==========================================================================
- * CSS SETTING
- * by Hiroaki WAKATSUKI
- * Converted 2014/2/16
- * ========================================================================== */
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
 *,
 *:before,
 *:after {
@@ -710,13 +702,8 @@ form input[type="submit"] {
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
   font-size: 14px;
-<<<<<<< HEAD
   border: 2px solid #f279b8d1;
   color: #f279b8d1;
-=======
-  border: 2px solid #57C3E9;
-  color: #57C3E9;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -725,13 +712,8 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
-<<<<<<< HEAD
   border-color: #ea9fef;
   color: #ea9fef;
-=======
-  border-color: #9bdbf2;
-  color: #9bdbf2;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
 }
 
 .title {
@@ -810,11 +792,7 @@ header.header .user_nav span:after {
 }
 
 header.header .user_nav span:hover ul {
-<<<<<<< HEAD
   color: #f279b8d1;
-=======
-  color: #57C3E9;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
   display: block;
 }
 
@@ -948,11 +926,7 @@ div.contents.row div.content_post .more ul.more_list li a {
 }
 
 div.contents.row div.content_post .more ul.more_list li a:hover {
-<<<<<<< HEAD
   background-color: #f279b8d1;
-=======
-  background-color: #57C3E9;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
   color: #fff;
 }
 
@@ -1015,11 +989,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-<<<<<<< HEAD
   background-color: #f279b8d1;
-=======
-  background-color: #57C3E9;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -1027,11 +997,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-<<<<<<< HEAD
   background-color: #ef85db;
-=======
-  background-color: #84d3ef;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
 }
 
 .container {
@@ -1056,11 +1022,7 @@ form input[type="submit"]:hover {
 }
 
 .comments a {
-<<<<<<< HEAD
   color: #f279b8d1;
-=======
-  color: #57C3E9;
->>>>>>> 92d0b127a1eb4bb18d5560fe497a62e5dee5cdd6
 }
 
 .comments a:hover {
