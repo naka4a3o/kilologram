@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="contents row">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @calendar.name %>
-</p>
+  <h3>
+    <strong>タイトル</strong>
+    <%= @calendar.title %>
+  </h3>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @calendar.start_time %>
-</p>
+  <h3>
+    <strong>時間</strong>
+    <%= @calendar.start_time.strftime("%Y-%m-%d %H:%M") %>
+  </h3>
 
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<%= link_to 'Back', calendars_path %>
+  <h3>
+    <strong>内容</strong>
+    <%= @calendar.content %>
+  </h3>
+
+  <%= link_to 'Edit', edit_user_calendar_path(@calendar) %> |
+  <%= link_to 'Back', user_calendars_path %>
+</div>

@@ -1,6 +1,33 @@
-<h1>Editing Calendar</h1>
+<div class="contents row">
+  <div class="container">
+    <h3>Editing Calendar</h3>
+<%# <%= render 'form', calendar: @calendar %> 
 
-<%= render 'form', calendar: @calendar %>
+<%# <%= link_to 'Show', user_calendar_path %> 
+<%# <%= link_to 'Back', user_calendars_path, method: :get %> 
+    <%= form_with model: @calendar, url: user_calendar_path, method: :patch, local: true do |form| %>
+<%# <%= form_with url: user_calendars_path, local: true do |form| %> 
 
-<%= link_to 'Show', @calendar %> |
-<%= link_to 'Back', calendars_path %>
+    <div class="title">
+      <%= form.label :体重 %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="time">
+      <%= form.label :日時 %>
+      <%= form.datetime_field :start_time %>
+    </div>
+
+    <div class="content">
+      <%= form.label :コメント %>
+      <%= form.text_field :content %>
+    </div>
+
+
+    <div class="submit">
+      <%= form.submit %>
+    </div>
+
+   <% end %>
+  </div>
+</div>
