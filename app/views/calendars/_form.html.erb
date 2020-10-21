@@ -1,10 +1,10 @@
-<%= form_with(model: calendar, local: true) do |form| %>
-  <% if calendar.errors.any? %>
+<%= form_with  model: @calendar, url: user_calendars_path,local: true do |form| %>
+  <% if @calendar.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+      <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
 
       <ul>
-        <% calendar.errors.full_messages.each do |message| %>
+        <% @calendar.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :体重 %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <%= form.label :日時 %>
+    <%= form.datetime_field :start_time %>
+  </div>
+
+  <div class="content">
+    <%= form.label :コメント %>
+    <%= form.text_field :content %>
   </div>
 
   <div class="actions">
