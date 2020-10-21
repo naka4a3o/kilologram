@@ -15,6 +15,7 @@ class CalendarsController < ApplicationController
 
   # GET /calendars/new
   def new
+    @user = User.find(params[:user_id])
     @calendar = Calendar.new
   end
 
@@ -25,6 +26,7 @@ class CalendarsController < ApplicationController
   # POST /calendars
   # POST /calendars.json
   def create
+    
     @calendar = Calendar.new(calendar_params)
       if @calendar.valid?
          @calendar.save
@@ -37,7 +39,8 @@ class CalendarsController < ApplicationController
   # PATCH/PUT /calendars/1
   # PATCH/PUT /calendars/1.json
   def update
-    if @calendar.update(calendar_parameter)
+    @calendar.update(calendar_parameter)
+    if  @calendar.valid?
       redirect_to user_calendars_path, method: :get, notice: "編集しました"
     else
       render 'edit'
