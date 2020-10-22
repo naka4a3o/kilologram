@@ -5,7 +5,7 @@ class CalendarsController < ApplicationController
   # GET /calendars
   # GET /calendars.json
   def index
-    @calendars = current_user.calendars
+    @calendars = current_user.calendars.includes(:user)
   end
 
   # GET /calendars/1
@@ -15,7 +15,6 @@ class CalendarsController < ApplicationController
 
   # GET /calendars/new
   def new
-    @user = User.find(params[:user_id])
     @calendar = Calendar.new
   end
 
@@ -25,14 +24,14 @@ class CalendarsController < ApplicationController
 
   # POST /calendars
   # POST /calendars.json
-  def create
-    
+  def create   
     @calendar = Calendar.new(calendar_params)
       if @calendar.valid?
+        # binding.pry
          @calendar.save
          redirect_to user_calendars_path, method: :get
       else
-         redirect_to new_user_calendar_path
+        render :new
       end
   end
 
@@ -65,10 +64,10 @@ class CalendarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def calendar_params
-      params.permit(:title, :content, :start_time).merge(user_id: current_user.id)
+      params.require(:calendar).permit(:weight, :content, :start_time).merge(user_id: current_user.id)
     end
     def calendar_parameter
-      params.require(:calendar).permit(:title, :content, :start_time).merge(user_id: current_user.id)
+      params.require(:calendar).permit(:weight, :content, :start_time).merge(user_id: current_user.id)
     end
     def move_to_index
       redirect_to root_path unless user_signed_in? && current_user.id 

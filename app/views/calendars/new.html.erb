@@ -1,27 +1,22 @@
 <div class="contents row">
   <div class="container">
-    <h3>New Calendar</h3>
+    <h3> New </h3>
 
-<%# <%= render 'form', calendar: @calendar %> 
+  <%= form_with model: @calendar, url: user_calendars_path, method: :post, local: true do |form|  %> 
+    <%= render 'layouts/error_messages', model: form.object %>
 
-<%# <%= link_to 'Back', calendars_path %>
-<%# <%= form_with model: @calendar, local: true do |form| %> 
-    <%= form_with (model: [@user, @calendar],local: true) do |form| %>
-    <%# <%= render 'shared/error_messages', model: [@user, @calendar] f.object %>  
-
-
-    <div class="title">
-      <%= form.label :体重 %>
-      <%= form.text_field :title %>
+    <div class="title weight">
+      <%= form.label :weight, '体重' %> 
+      <%= form.number_field :weight, min:30.0, max:200.0, step: "0.1", placeholder:"00.0", autofocus: true, class:"input-weight"%>
     </div>
 
     <div class="time">
-      <%= form.label :日時 %>
+      <%= form.label :start_time, '日時' %>
       <%= form.datetime_field :start_time %>
     </div>
 
     <div class="content">
-      <%= form.label :コメント %>
+      <%= form.label :content, 'コメント' %>
       <%= form.text_field :content %>
     </div>
 
