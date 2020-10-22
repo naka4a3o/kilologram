@@ -1,24 +1,47 @@
-# README
+# Kilologram
+体重を記録するWebサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##  App URL
+https://kilologram-00.herokuapp.com/
 
-Things you may want to cover:
+## Description
+日々の体重を入力して、カレンダーに表示することができます。
 
-* Ruby version
+## テーブル設計
 
-* System dependencies
+## users テーブル
 
-* Configuration
+| Column            | Type    | Options       |
+|-----------------  |-------- |-------------  |
+| name              | string  | null: false   |
+| email             | string  | null: false   |
+| password          | string  | null: false   |
 
-* Database creation
+### Association
 
-* Database initialization
+- has_many :calendars
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## calendars テーブル
 
-* Deployment instructions
+| Column                  | Type        | Options                         |
+|-----------------------  |------------ |-------------------------------- |
+| weight                  | string      | null: false                     |
+| start_time              | datetime    | null: false                     |
+| content                 | text        | null: false                     |
+| user                    | references  | null: false, foreign_key: true  |
 
-* ...
+### Association
+
+- belongs_to :user
+
+## Install
+
+$ git clone https://github.com/naka4a3o/kilologram.git
+$ cd kilologram
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+ http://localhost:3000
+
