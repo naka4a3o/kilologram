@@ -2,20 +2,20 @@
   <p id="notice"><%= notice %></p>
 
   <h3>
-    <strong>タイトル</strong>
-    <%= @calendar.title %>
+    <strong>体重 : </strong>
+    <%= @calendar.weight %> kg
   </h3>
 
   <h3>
-    <strong>時間</strong>
+    <strong>時間 : </strong>
     <%= @calendar.start_time.strftime("%Y-%m-%d %H:%M") %>
   </h3>
 
   <h3>
-    <strong>内容</strong>
+    <strong>内容 : </strong>
     <%= @calendar.content %>
   </h3>
 
-  <%= link_to 'Edit', edit_user_calendar_path(@calendar) %> |
-  <%= link_to 'Back', user_calendars_path %>
+  <%= link_to '< Edit >', edit_user_calendar_path(@calendar) %> |
+  <%= link_to '< Back >', user_calendars_path %>
 </div>

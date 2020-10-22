@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_10_18_052345) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
+    t.string "weight"
     t.text "content"
     t.datetime "start_time"
     t.bigint "user_id"
